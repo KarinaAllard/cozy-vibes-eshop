@@ -12,7 +12,7 @@ export const Layout = () => {
     return (
 
         <div className="min-h-screen grid grid-rows-[auto_1fr_auto]">
-        <header>{isAdmin ? <AdminNavbar /> : <Navbar />}</header>
+        <header className=" bg-[var(--warm-beige)]">{isAdmin ? <AdminNavbar /> : <Navbar />}</header>
         <main className=" bg-[var(--soft-ivory)]"><Outlet/></main>
         <footer><Footer/></footer>
         </div>

@@ -2,20 +2,25 @@
 
 @layer base {
   :root {
+    /* Primary Colors */
     --warm-beige: #F0E5D8;
-    --muted-taupe: #D1C6B1;
     --soft-ivory: #F9F7F2;
+    /* Accent Colors */
     --dusty-rose: #D9A7A1;
     --sage-green: #A8BBA8;
-    --moss-green: #6d7b64;
     --muted-gold: #D4AF7F;
+    /* Emphasis Color */
+    --moss-green: #6d7b64;
+    /* Secondary Colors */
     --soft-charcoal: #585858;
-    --warm-sand: #C8B89C;
     --warm-light-gray: #E2E1D8;
+    /* Product Card Background Color */
+    --product-card-bg: #F3EEE9;
   }
 
   h1 {
     font-size: var(--text-4xl);
+    color: var(--moss-green);
   }
   h2 {
     font-size: var(--text-3xl); 
@@ -28,6 +33,7 @@
   }
   p {
     font-size: var(--text-base);
+    color: var(--soft-charcoal);
   }
 
 }
