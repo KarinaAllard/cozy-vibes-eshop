@@ -7,10 +7,10 @@ export const Products = () => {
 	const { products, isLoading, error } = useProducts();
 
 	return (
-		<div className="shop-wrapper">
+		<div className="flex flex-col p-16 items-center">
 			{isLoading && <p>Loading products</p>}
 			{error && <p>Error: {error}</p>}
-			<div className="product-wrapper">
+			<div className="flex flex-wrap gap-6 items-start justify-center">
 				{products.length === 0 && !isLoading && <p>No products found.</p>}
 				{products.map((product) => (
 					<Link
@@ -18,11 +18,11 @@ export const Products = () => {
 						key={product.id}
 						className="product-link"
 					>
-						<div className="product-div" key={product.id}>
-							<img src={product.image} alt={product.name} />
-							<div className="product-text">
-								<h4>{product.name}</h4>
-								<p>{product.price} kr</p>
+						<div className="w-68 text-left hover:scale-105 p-2 text-[var(--moss-green)] hover:text-[var(--dusty-rose)]" key={product.id}>
+							<img src={product.image} alt={product.name} className="mb-2" />
+							<div>
+								<h4 className="h-16">{product.name}</h4>
+								<p className="text-[var(--moss-green)] font-black">{product.price} kr</p>
 							</div>
 							<div className="button-div">
 								<Button className="cart-btn">View</Button>

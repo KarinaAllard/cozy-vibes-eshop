@@ -5,14 +5,12 @@ import { Button } from "../../components/Button";
 import { Link } from "react-router";
 
 enum ProductCategory {
-	Hat = "Hat",
-	Glasses = "Glasses",
-	Jacket = "Jacket",
-	Neckwear = "Neckwear",
-	Shirt = "Shirt",
-	Gloves = "Gloves",
-	Pants = "Pants",
-	Shoes = "Shoes",
+	Candle = "Candle",
+	Vase = "Vase",
+	Pot = "Pot",
+	HomeTextile = "Home Textile",
+	CandleHolder = "Candle Holder",
+	Decoration = "Decoration",
 }
 
 export const CreateProduct = () => {
