@@ -11,25 +11,27 @@ export const Navbar = () => {
 
     return (
 
-        <div className="nav-div">
+        <div className="flex items-center justify-between h-full px-8 relative">
 
-            <div className="menu-icon" onClick={toggleMenu}>
-                {menuOpen ? <FaTimes /> : <FaBars />}
+            <div className="block text-2xl cursor-pointer md:hidden" onClick={toggleMenu}>
+                {menuOpen ? <FaTimes className="text-[var(--moss-green)] hover:text-[var(--muted-gold)]" /> : <FaBars className="text-[var(--moss-green)] hover:text-[var(--muted-gold)]" />}
             </div>
-            <ul className={`nav-bar ${menuOpen ? "open" : ""}`}>
-                <li className="nav-item">
+            <ul className={`absolute top-20 left-0 w-full bg-[var(--soft-ivory)] flex flex-col gap-2 p-0 m-0 list-none 
+                ${menuOpen ? "flex" : "hidden"} md:flex md:flex-row md:gap-8 md:static md:w-auto md:bg-transparent`}
+            >
+                <li className="text-center py-4 px-8 bg-transparent hover:bg-[var(--warm-beige)] transition-all duration-300 ease-in-out">
                     <NavLink to={"/"} onClick={() => setMenuOpen(false)}>Home</NavLink>
                 </li>
-                <li className="nav-item">
+                <li className="text-center py-4 px-8 bg-transparent hover:bg-[var(--warm-beige)] transition-all duration-300 ease-in-out">
                     <NavLink to={"/products"} onClick={() => setMenuOpen(false)}>Shop</NavLink>
                 </li>
-                <li className="nav-item">
+                <li className="text-center py-4 px-8 bg-transparent hover:bg-[var(--warm-beige)] transition-all duration-300 ease-in-out">
                     <NavLink to={"/admin/manage-products"} onClick={() => setMenuOpen(false)}>Admin</NavLink>
                 </li>    
             </ul>
-            <div className="cart-icon">
+            <div className="text-2xl">
                 <NavLink to={"/cart"}>
-                    <FaShoppingCart/>
+                    <FaShoppingCart className="text-[var(--moss-green)] hover:text-[var(--muted-gold)]"/>
                 </NavLink>
             </div>
         </div>
