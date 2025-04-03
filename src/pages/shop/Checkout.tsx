@@ -4,7 +4,7 @@ import axios from "axios";
 import { Button } from "../../components/Button";
 import { Link } from "react-router";
 import { API_URL } from "../../services/baseService";
-import "../../styles/checkout.css"
+// import "../../styles/checkout.css"
 import { loadStripe } from "@stripe/stripe-js";
 import { EmbeddedCheckoutProvider, EmbeddedCheckout } from "@stripe/react-stripe-js";
 import CartContext from "../../context/CartContext";

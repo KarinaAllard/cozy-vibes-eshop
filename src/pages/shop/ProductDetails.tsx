@@ -1,6 +1,6 @@
 import { Button } from "../../components/Button";
 import { useProducts } from "../../hooks/useProducts";
-import "../../styles/shop.css";
+// import "../../styles/shop.css";
 import { useParams } from "react-router";
 import { Link } from "react-router";
 import { MdChevronLeft } from "../../icons";
