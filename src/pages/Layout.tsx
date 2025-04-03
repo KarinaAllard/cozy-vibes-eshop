@@ -14,7 +14,7 @@ export const Layout = () => {
         <div className="min-h-screen grid grid-rows-[auto_1fr_auto]">
         <header className=" bg-[var(--soft-ivory)] w-full h-20 ">{isAdmin ? <AdminNavbar /> : <Navbar />}</header>
         <main className=" bg-[var(--soft-ivory)]"><Outlet/></main>
-        <footer><Footer/></footer>
+        <footer className=" bg-[var(--sage-green)]"><Footer/></footer>
         </div>
     )
 }
