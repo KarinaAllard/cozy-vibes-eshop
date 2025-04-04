@@ -8,7 +8,7 @@ export const UpdateOrder = () => {
 	const { id } = useParams<{ id: string }>();
 	const navigate = useNavigate();
 
-	const { order, isLoading, error, setOrder } = useOrder(Number(id));
+	const { order, isLoading, error } = useOrder(Number(id));
 
 	const [orderStatus, setOrderStatus] = useState<string>("");
 	const [paymentStatus, setPaymentStatus] = useState<string>("");
