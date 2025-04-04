@@ -88,15 +88,15 @@ export const Checkout = () => {
 	}, [existingCustomer?.id, fetchClientSecret])
 
 	return (
-		<div className="checkout-wrapper">
-			<h1>Checkout</h1>
-			<div className="checkout-div">
+		<div className="flex flex-col items-center mb-20">
+			<h1 className="bg-[var(--dusty-rose)] text-[var(--soft-ivory)] w-full mb-10">Checkout</h1>
+			<div className="max-w-7xl">
 				{error && <p className="error-banner">{error}</p>}
 				{!existingCustomer && (
 
 				<form onSubmit={handleSubmit}>
-                <div className="form-div">
-                    <label htmlFor="firstname">First Name:</label>
+                <div className="flex flex-col py-4 gap-1">
+                    <label className="text-[var(--moss-green)]" htmlFor="firstname">First Name:</label>
 					<input
 						type="text"
 						name="firstname"
@@ -104,6 +104,7 @@ export const Checkout = () => {
 						onChange={handleChange}
 						placeholder="First Name"
 						required
+						className="border border-[var(--dusty-rose)] p-1"
 					/>
                     <label htmlFor="lastname">Last Name:</label>
 					<input
@@ -113,6 +114,7 @@ export const Checkout = () => {
 						onChange={handleChange}
 						placeholder="Last Name"
 						required
+						className="border border-[var(--dusty-rose)] p-1"
 					/>
                     <label htmlFor="email">Email:</label>
 					<input
@@ -122,6 +124,7 @@ export const Checkout = () => {
 						onChange={handleChange}
 						placeholder="Email"
 						required
+						className="border border-[var(--dusty-rose)] p-1"
 					/>
                     <label htmlFor="phone">Phone:</label>
 					<input
@@ -130,6 +133,7 @@ export const Checkout = () => {
 						value={formData.phone}
 						onChange={handleChange}
 						placeholder="Phone Number"
+						className="border border-[var(--dusty-rose)] p-1"
 					/>
                     <label htmlFor="street_address">Street Address:</label>
 					<input
@@ -138,6 +142,7 @@ export const Checkout = () => {
 						value={formData.street_address}
 						onChange={handleChange}
 						placeholder="Street Address"
+						className="border border-[var(--dusty-rose)] p-1"
 					/>
                     <label htmlFor="postal_code">Postal Code:</label>
 					<input
@@ -146,6 +151,7 @@ export const Checkout = () => {
 						value={formData.postal_code}
 						onChange={handleChange}
 						placeholder="Postal Code"
+						className="border border-[var(--dusty-rose)] p-1"
 					/>
                     <label htmlFor="city">City:</label>
 					<input
@@ -154,6 +160,7 @@ export const Checkout = () => {
 						value={formData.city}
 						onChange={handleChange}
 						placeholder="City"
+						className="border border-[var(--dusty-rose)] p-1"
 					/>
                     <label htmlFor="country">Country:</label>
 					<input
@@ -162,6 +169,7 @@ export const Checkout = () => {
 						value={formData.country}
 						onChange={handleChange}
 						placeholder="Country"
+						className="border border-[var(--dusty-rose)] p-1"
 					/>
 				</div>
 				<div className="button-div">
