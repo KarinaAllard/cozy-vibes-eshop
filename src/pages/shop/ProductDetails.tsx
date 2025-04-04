@@ -58,7 +58,7 @@ export const ProductDetails = () => {
 				</div>
 				<div className="flex flex-col max-w-7xl p-4 mb-10 md:flex-row justify-center w-full px-10 md:gap-12">
 					<div className="md:w-1/2">
-						<img src={product?.image} alt={product?.name} />
+						<img className="border border-[var(--warm-light-gray)]" src={product?.image} alt={product?.name} />
 					</div>
 					<div className="md:w-1/2 md:pt-20">
 						<div className="product-text">
