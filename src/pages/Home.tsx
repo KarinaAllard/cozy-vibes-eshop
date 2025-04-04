@@ -1,5 +1,7 @@
 // import "../styles/home.css"
 
+import { Button } from "../components/Button";
+
 export const Home = () => {
 	return (
 		<div className="home-wrapper flex items-center flex-col">
@@ -10,9 +12,9 @@ export const Home = () => {
 			<h2 className="text-[var(--dusty-rose)]">Cozy, Calming Decor</h2>
 			<p className="text-[var(--soft-charcoal)]">Discover our selection of cozy home decor items.</p>
 
-			<button className="bg-[var(--muted-gold)] text-white hover:bg-[var(--sage-green)] p-2 rounded-md">
+			<Button variant="primary" className="">
   				Shop Now
-			</button>
+			</Button>
 		</div>
 	);
 };

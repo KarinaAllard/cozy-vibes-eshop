@@ -73,7 +73,7 @@ export const OrderConfirmation = () => {
 				)}
 
 				<div className="button-div">
-					<Button className="submit-btn">
+					<Button variant="submit" className="submit-btn">
 						<Link to={"/products"}>Back to Shop</Link>
 					</Button>
 				</div>

@@ -65,11 +65,11 @@ export const Cart = () => {
                                 </div>
                                 <div className="item-actions">
                                     <div className="quantity-controls">
-                                        <Button className="minus-btn" onClick={() => handleChangeQuantity(item, -1)}><FaMinus /></Button>
+                                        <Button variant="secondary" className="minus-btn" onClick={() => handleChangeQuantity(item, -1)}><FaMinus /></Button>
                                         <span>{item.quantity}</span>
-                                        <Button className="plus-btn" onClick={() => handleChangeQuantity(item, 1)}><FaPlus /></Button>
+                                        <Button variant="secondary" className="plus-btn" onClick={() => handleChangeQuantity(item, 1)}><FaPlus /></Button>
                                     </div>
-                                    <Button className="trash-btn" onClick={() => handleRemoveFromCart(item)}><FaTrash /></Button>
+                                    <Button variant="delete" className="trash-btn" onClick={() => handleRemoveFromCart(item)}><FaTrash /></Button>
                                 </div>
                             </div>
                         ))}
@@ -77,8 +77,8 @@ export const Cart = () => {
 
                     <div className="cart-summary">
                         <h3>Total: {totalCartPrice} kr</h3>
-                        <Button className="trash-btn" onClick={handleResetCart}>Clear Cart</Button>
-                        <Button className="submit-btn" disabled={cart.length === 0}><Link to={"/checkout"}>Proceed to Checkout</Link></Button>
+                        <Button variant="delete" className="trash-btn" onClick={handleResetCart}>Clear Cart</Button>
+                        <Button variant="submit" className="submit-btn" disabled={cart.length === 0}><Link to={"/checkout"}>Proceed to Checkout</Link></Button>
                     </div>
                 </div>
             )}

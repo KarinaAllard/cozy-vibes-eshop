@@ -70,7 +70,7 @@ export const ProductDetails = () => {
 						</div>
 
 						<div className="button-div">
-							<Button
+							<Button variant="primary"
 								onClick={handleAddToCart}
 								className="cart-btn"
 								disabled={!inStock}

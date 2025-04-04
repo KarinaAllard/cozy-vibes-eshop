@@ -122,7 +122,7 @@ export const CreateCustomer = () => {
 					/>
 				</div>
 				<div className="button-div">
-					<Button type="submit" className="submit-btn">
+					<Button variant="submit" type="submit" className="submit-btn">
 						Create Customer
 					</Button>
 					<Link to={"/admin/manage-customers"}>Go back</Link>

@@ -65,7 +65,7 @@ export const UpdateOrder = () => {
 				</div>
 
 				<div className="button-div">
-					<Button className="edit-btn" onClick={handleSaveChanges}>
+					<Button variant="submit" className="edit-btn" onClick={handleSaveChanges}>
 						Save Changes
 					</Button>
 				</div>

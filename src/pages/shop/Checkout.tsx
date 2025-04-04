@@ -165,7 +165,7 @@ export const Checkout = () => {
 					/>
 				</div>
 				<div className="button-div">
-					<Button type="submit" className="submit-btn">
+					<Button variant="submit" type="submit" className="submit-btn">
 						Proceed to Payment
 					</Button>
 					<Link to={"/cart"}>Back to Cart</Link>
