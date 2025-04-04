@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { FaShoppingCart, FaTimes, FaBars } from "../icons"
 import { Link, NavLink } from "react-router"
+import logo from "../../public/images/logo.png"
 
 export const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -13,7 +14,7 @@ export const Navbar = () => {
 
         <div className="flex items-center justify-between h-full px-8 relative">
             <div className="w-16 hidden md:block">
-                <Link to={"/"}><img src="/src/images/logo.png" alt="Cozy Vibes" /></Link>
+                <Link to={"/"}><img src={logo}alt="Cozy Vibes" /></Link>
             </div>
 
             <div className="block text-2xl cursor-pointer md:hidden" onClick={toggleMenu}>
