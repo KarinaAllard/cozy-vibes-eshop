@@ -2,13 +2,14 @@ import { Button } from "../../components/Button";
 import { useProducts } from "../../hooks/useProducts";
 // import "../../styles/shop.css";
 import { Link } from "react-router";
-import { FaShoppingBag } from "../../icons";
+// import { FaShoppingBag } from "../../icons";
 
 export const Products = () => {
 	const { products, isLoading, error } = useProducts();
 
 	return (
 		<div className="flex flex-col p-16 items-center">
+			<h1 className="bg-[var(--dusty-rose)] text-[var(--soft-ivory)] w-full md:w-1/2 mb-10">Our Products</h1>
 			{isLoading && <p>Loading products</p>}
 			{error && <p>Error: {error}</p>}
 			<div className="flex flex-wrap gap-6 items-start justify-center">

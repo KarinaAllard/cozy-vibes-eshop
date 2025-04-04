@@ -41,43 +41,48 @@ export const ProductDetails = () => {
 	};
 
 	return (
-		<div className="shop-wrapper">
+		<div className="flex flex-col">
 			{isLoading && <p>Loading products</p>}
 			{error && <p>Error: {error}</p>}
 			{cartBanner && (
-				<div className="banner">
+				<div className="bg-[var(--muted-gold)] text-[var(--soft-ivory)]">
 					<h4>Item added to cart!</h4>
 				</div>
 			)}
-			<div className="product-wrapper">
-				<div className="link-div">
-					<Link to={"/products"}>
-						<MdChevronLeft />
+			<div className="flex justify-center items-center flex-col gap-6">
+				<div className="flex max-w-7xl w-full p-10 justify-end">
+					<Link to={"/products"} className="flex flex-row">
+						<MdChevronLeft className="text-2xl" />
 						Back
 					</Link>
 				</div>
-				<div className="product-detail-div">
-					<div className="product-info">
-						<div className="product-image">
-							<img src={product?.image} alt={product?.name} />
-						</div>
-						<div className="product-text">
-							<h2>{product?.name}</h2>
-							{!inStock && <h4>Out of Stock</h4>}
-							<p>{product?.description}</p>
-							<h4>{product?.price} kr</h4>
-							<p>Clothing type: {product?.category}</p>
-						</div>
+				<div className="flex flex-col max-w-7xl p-4 mb-10 md:flex-row justify-center w-full px-10 md:gap-12">
+					<div className="md:w-1/2">
+						<img src={product?.image} alt={product?.name} />
 					</div>
+					<div className="md:w-1/2 md:pt-20">
+						<div className="product-text">
+							<h2 className="border-b-1 m-2 border-[var(--dusty-rose)]">
+								{product?.name}
+							</h2>
+							{!inStock && <h4>Out of Stock</h4>}
+							<h3 className="text-right">{product?.price} kr</h3>
+						</div>
 
-					<div className="button-div">
-						<Button
-							onClick={handleAddToCart}
-							className="cart-btn"
-							disabled={!inStock}
-						>
-							{inStock ? "Add to Cart" : "Out of Stock"}
-						</Button>
+						<div className="button-div">
+							<Button
+								onClick={handleAddToCart}
+								className="cart-btn"
+								disabled={!inStock}
+							>
+								{inStock ? "Add to Cart" : "Out of Stock"}
+							</Button>
+						</div>
+						<div className="mt-10">
+							<h4>Product Description:</h4>
+							<p>{product?.description}</p>
+							<p>Category: {product?.category}</p>
+						</div>
 					</div>
 				</div>
 			</div>
