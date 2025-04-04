@@ -13,7 +13,7 @@ export const AdminNavbar = () => {
 
         <div className="flex items-center justify-between h-full px-8 relative">
             <div className="w-16 hidden md:block">
-                <img src="/src/images/logo.png" alt="Cozy Vibes" />
+                <img src="/images/logo.png" alt="Cozy Vibes" />
             </div>
             
              <div className="block text-2xl cursor-pointer md:hidden" onClick={toggleMenu}>
