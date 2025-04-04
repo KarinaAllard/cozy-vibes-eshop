@@ -13,6 +13,7 @@ import {
 	FaBars,
 	FaCog,
     FaSignOutAlt,
+    FaShoppingBag,
 } from "react-icons/fa";
 
 export {
@@ -28,4 +29,5 @@ export {
 	FaBars,
 	FaCog,
     FaSignOutAlt,
+    FaShoppingBag,
 };
