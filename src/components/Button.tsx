@@ -16,7 +16,7 @@ export const Button = (props: IButtonProps) => {
         submit: "bg-[var(--vb-sage-green)] text-white hover:text-[var(--soft-ivory)] hover:bg-[var(--vb-sage-green-hv)]",
         delete: "bg-[var(--burnt-red)] text-white hover:text-[var(--soft-ivory)] hover:bg-[var(--burnt-red-hv)]",
         primary: "bg-[var(--muted-gold)] text-[var(--soft-ivory)] hover:bg-[var(--muted-gold-hv)]",
-        secondary: "bg-transparent text-[var(--soft-charcoal)] border border-[var(--soft-charcoal)] hover:bg-[var(--light-ivory)] hover:text-[var(--soft-charcoal-hv)] hover:border-[var(--soft-charcoal-hv)]",
+        secondary: "bg-transparent text-[var(--soft-charcoal)] border border-[var(--warm-light-gray)] hover:bg-[var(--warm-light-gray)] hover:text-[var(--soft-charcoal-hv)]",
         disabled: "bg-gray-400 text-[var(--soft-ivory)] cursor-not-allowed",
     };
 
