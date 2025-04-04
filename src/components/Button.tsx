@@ -1,4 +1,4 @@
-import "/src/styles/button.css"
+// import "/src/styles/button.css"
 
 interface IButtonProps {
     children: React.ReactNode;

@@ -1,6 +1,53 @@
 @import "tailwindcss";
 
-:root {
+@layer base {
+  :root {
+    /* Primary Colors */
+    --warm-beige: #F0E5D8;
+    --soft-ivory: #F9F7F2;
+    /* Accent Colors */
+    --dusty-rose: #D9A7A1;
+    --sage-green: #A8BBA8;
+    --muted-gold: #D4AF7F;
+    /* Emphasis Color */
+    --moss-green: #6d7b64;
+    /* Secondary Colors */
+    --soft-charcoal: #585858;
+    --warm-light-gray: #E2E1D8;
+    /* Product Card Background Color */
+    --product-card-bg: #F3EEE9;
+  }
+
+  h1 {
+    font-size: var(--text-4xl);
+    color: var(--moss-green);
+  }
+  h2 {
+    font-size: var(--text-3xl); 
+  }
+  h3 {
+    font-size: var(--text-2xl); 
+  }
+  h4 {
+    font-size: var(--text-xl);
+  }
+  p {
+    font-size: var(--text-base);
+    color: var(--soft-charcoal);
+  }
+
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  color: var(--soft-charcoal);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+}
+
+/* :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -66,4 +113,4 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-}
+} */
