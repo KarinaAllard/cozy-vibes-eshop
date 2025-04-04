@@ -1,7 +1,7 @@
 import { Link, useParams } from "react-router";
 import { useOrder } from "../../hooks/useOrder";
 import { useState } from "react";
-import { MdEdit, MdExpandLess, MdExpandMore } from "../../icons";
+import { MdExpandLess, MdExpandMore } from "../../icons";
 import { Button } from "../../components/Button";
 import {
 	updateOrderItem,
@@ -143,7 +143,6 @@ export const OrderDetails = () => {
 													onClick={() => setEditItemID(item.id ?? -1)}
 												>
 													Update 
-													{/* <MdEdit /> */}
 												</Button>
 											</div>
 										</>

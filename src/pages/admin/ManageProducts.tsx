@@ -2,7 +2,7 @@ import { Link } from "react-router";
 import { Button } from "../../components/Button";
 import { useProducts } from "../../hooks/useProducts";
 import { useState } from "react";
-import { MdEdit, MdExpandLess, MdExpandMore } from "../../icons";
+import { MdExpandLess, MdExpandMore } from "../../icons";
 
 export const ManageProducts = () => {
 	const { products, isLoading, error, deleteProductHandler } = useProducts();
@@ -53,7 +53,6 @@ export const ManageProducts = () => {
 									<Button variant="primary" type="button" className="edit-btn">
 										<Link to={`/admin/update-product/${product.id}`}>
 											Update 
-											{/* <MdEdit /> */}
 										</Link>
 									</Button>
 									<Button variant="delete"
