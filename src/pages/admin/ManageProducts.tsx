@@ -19,7 +19,7 @@ export const ManageProducts = () => {
 			{error && <p>Error: {error}</p>}
 			<div className="product-wrapper">
 				<div className="button-div">
-					<Button type="button" className="edit-btn">
+					<Button variant="submit" type="button" className="edit-btn">
 						<Link to={"/admin/create-product"}>Create Product</Link>
 					</Button>
 				</div>
@@ -50,12 +50,13 @@ export const ManageProducts = () => {
 									<p>{product.category}</p>
 								</div>
 								<div className="button-div">
-									<Button type="button" className="edit-btn">
+									<Button variant="primary" type="button" className="edit-btn">
 										<Link to={`/admin/update-product/${product.id}`}>
-											Update <MdEdit />
+											Update 
+											{/* <MdEdit /> */}
 										</Link>
 									</Button>
-									<Button
+									<Button variant="delete"
 										className="delete-btn"
 										onClick={() =>
 											product.id && deleteProductHandler(product.id)

@@ -22,7 +22,7 @@ export const ManageCustomers = () => {
 
 			<div className="customer-wrapper">
 				<div className="button-div">
-					<Button type="button" className="edit-btn">
+					<Button variant="submit" type="button" className="edit-btn">
 						<Link to={"/admin/create-customer"}>Create Customer</Link>
 					</Button>
 				</div>
@@ -53,12 +53,13 @@ export const ManageCustomers = () => {
 									</p>
 								</div>
 								<div className="button-div">
-									<Button className="edit-btn">
+									<Button variant="primary" className="edit-btn">
 										<Link to={`/admin/update-customer/${customer.id}`}>
 											Update <MdEdit />
 										</Link>
 									</Button>
 									<Button
+										variant="delete"
 										className="delete-btn"
 										onClick={() =>
 											customer.id && deleteCustomerHandler(customer.id)

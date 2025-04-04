@@ -116,12 +116,14 @@ export const OrderDetails = () => {
 											/>
 											<div className="button-div">
 												<Button
+													variant="primary"
 													className="edit-btn"
 													onClick={() => handleSave(item.id ?? -1)}
 												>
 													Save
 												</Button>
 												<Button
+													variant="delete"
 													className="delete-btn"
 													onClick={() => handleDelete(item.id ?? -1)}
 												>
@@ -136,10 +138,12 @@ export const OrderDetails = () => {
 											</p>
 											<div className="button-div">
 												<Button
+													variant="primary"
 													className="edit-btn"
 													onClick={() => setEditItemID(item.id ?? -1)}
 												>
-													Update <MdEdit />
+													Update 
+													{/* <MdEdit /> */}
 												</Button>
 											</div>
 										</>
@@ -183,10 +187,11 @@ export const OrderDetails = () => {
 					)}
 				</div>
 				<div className="button-div">
-					<Button className="edit-btn">
+					<Button variant="primary" className="edit-btn">
 						<Link to={`/admin/update-order/${order?.id}`}>Edit Order</Link>
 					</Button>
 					<Button
+						variant="delete"
 						className="delete-btn"
 						onClick={() => order?.id && deleteOrderHandler(order?.id)}
 					>

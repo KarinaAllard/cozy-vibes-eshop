@@ -16,6 +16,12 @@
     --warm-light-gray: #E2E1D8;
     /* Product Card Background Color */
     --product-card-bg: #F3EEE9;
+    /* Buttons */
+    --vb-sage-green: #4F9E7E;
+    --vb-sage-green-hv: #438C6A;
+    --burnt-red: #D94F4F;
+    --burnt-red-hv: #B94040;
+    --muted-gold-hv: #C69B6D;
   }
 
   h1 {

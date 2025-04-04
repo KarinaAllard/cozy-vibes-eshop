@@ -112,7 +112,7 @@ export const CreateProduct = () => {
 					/>
 
 					<div className="button-div">
-						<Button type="submit" className="submit-btn">
+						<Button variant="submit" type="submit" className="submit-btn">
 							Create Product
 						</Button>
 						<Link to={"/admin/manage-products"}>Go back</Link>

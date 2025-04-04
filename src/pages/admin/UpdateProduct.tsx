@@ -126,7 +126,7 @@ export const UpdateProduct = () => {
 					/>
 
 					<div className="button-div">
-						<Button type="submit" className="submit-btn">
+						<Button variant="submit" type="submit" className="submit-btn">
 							Update Product
 						</Button>
 					</div>

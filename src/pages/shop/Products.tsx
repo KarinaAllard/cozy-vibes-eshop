@@ -27,7 +27,7 @@ export const Products = () => {
 							</div>
 							<div className="flex justify-end w-full">
 								<p className="text-[var(--moss-green)] font-black flex-grow">{product.price} kr</p>
-								<Button className="max-w-[100px] p-1 px-3 cursor-pointer flex rounded-xl justify-end hover:bg-[var(--warm-beige)] hover:underline">See More</Button>
+								<Button variant="secondary" className="">See More</Button>
 								{/* <Button className="w-50 flex justify-end"><FaShoppingBag className="text-5xl hover:text-[var(--soft-ivory)] hover:bg-[var(--sage-green)] p-2 rounded-full" /></Button> */}
 							</div>
 						</div>
