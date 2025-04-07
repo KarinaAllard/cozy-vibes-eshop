@@ -11,10 +11,10 @@ export const Layout = () => {
 
     return (
 
-        <div className="min-h-screen grid grid-rows-[auto_1fr_auto]">
-        <header className=" bg-[var(--soft-ivory)] w-full h-20 ">{isAdmin ? <AdminNavbar /> : <Navbar />}</header>
-        <main className=" bg-[var(--soft-ivory)]"><Outlet/></main>
-        <footer className=" bg-[var(--sage-green)]"><Footer/></footer>
+        <div className="min-h-screen grid grid-rows-[auto_1fr_auto] min-w-xs">
+        <header className=" bg-[var(--soft-ivory)] w-full h-20 min-w-xs">{isAdmin ? <AdminNavbar /> : <Navbar />}</header>
+        <main className=" bg-[var(--soft-ivory)] min-w-xs"><Outlet/></main>
+        <footer className=" bg-[var(--sage-green)] min-w-xs"><Footer/></footer>
         </div>
     )
 }

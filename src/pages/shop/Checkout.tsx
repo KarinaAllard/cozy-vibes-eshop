@@ -88,15 +88,15 @@ export const Checkout = () => {
 	}, [existingCustomer?.id, fetchClientSecret])
 
 	return (
-		<div className="checkout-wrapper">
-			<h1>Checkout</h1>
-			<div className="checkout-div">
+		<div className="flex flex-col items-center mb-20">
+			<h1 className="bg-[var(--dusty-rose)] text-[var(--soft-ivory)] w-full mb-10">Checkout</h1>
+			<div className="max-w-7xl">
 				{error && <p className="error-banner">{error}</p>}
 				{!existingCustomer && (
 
-				<form onSubmit={handleSubmit}>
-                <div className="form-div">
-                    <label htmlFor="firstname">First Name:</label>
+				<form className=" w-60 md:w-72" onSubmit={handleSubmit}>
+                <div className="flex flex-col py-4 gap-1">
+                    <label className="text-[var(--moss-green)]" htmlFor="firstname">First Name:</label>
 					<input
 						type="text"
 						name="firstname"
@@ -104,6 +104,7 @@ export const Checkout = () => {
 						onChange={handleChange}
 						placeholder="First Name"
 						required
+						className="border border-[var(--dusty-rose)] p-1"
 					/>
                     <label htmlFor="lastname">Last Name:</label>
 					<input
@@ -113,6 +114,7 @@ export const Checkout = () => {
 						onChange={handleChange}
 						placeholder="Last Name"
 						required
+						className="border border-[var(--dusty-rose)] p-1"
 					/>
                     <label htmlFor="email">Email:</label>
 					<input
@@ -122,6 +124,7 @@ export const Checkout = () => {
 						onChange={handleChange}
 						placeholder="Email"
 						required
+						className="border border-[var(--dusty-rose)] p-1"
 					/>
                     <label htmlFor="phone">Phone:</label>
 					<input
@@ -130,6 +133,8 @@ export const Checkout = () => {
 						value={formData.phone}
 						onChange={handleChange}
 						placeholder="Phone Number"
+						required
+						className="border border-[var(--dusty-rose)] p-1"
 					/>
                     <label htmlFor="street_address">Street Address:</label>
 					<input
@@ -138,6 +143,8 @@ export const Checkout = () => {
 						value={formData.street_address}
 						onChange={handleChange}
 						placeholder="Street Address"
+						required
+						className="border border-[var(--dusty-rose)] p-1"
 					/>
                     <label htmlFor="postal_code">Postal Code:</label>
 					<input
@@ -146,6 +153,8 @@ export const Checkout = () => {
 						value={formData.postal_code}
 						onChange={handleChange}
 						placeholder="Postal Code"
+						required
+						className="border border-[var(--dusty-rose)] p-1"
 					/>
                     <label htmlFor="city">City:</label>
 					<input
@@ -154,6 +163,8 @@ export const Checkout = () => {
 						value={formData.city}
 						onChange={handleChange}
 						placeholder="City"
+						required
+						className="border border-[var(--dusty-rose)] p-1"
 					/>
                     <label htmlFor="country">Country:</label>
 					<input
@@ -162,20 +173,22 @@ export const Checkout = () => {
 						value={formData.country}
 						onChange={handleChange}
 						placeholder="Country"
+						required
+						className="border border-[var(--dusty-rose)] p-1"
 					/>
 				</div>
-				<div className="button-div">
+				<div className="flex flex-col mt-4 gap-2">
 					<Button variant="submit" type="submit" className="submit-btn">
 						Proceed to Payment
 					</Button>
-					<Link to={"/cart"}>Back to Cart</Link>
+					<Link className="hover:text-[var(--muted-gold-hv)]" to={"/cart"}>Back to Cart</Link>
 				</div>
                 </form>
 				)}
 
 			{existingCustomer && clientSecret && (
-				<div className="embedded-checkout">
-					<div className="payment-container">
+				<div className="w-5xl">
+					<div className="border border-[var(--dusty-rose)] my-6 bg-white py-4">
 						<div className="embedded-div">
 							<EmbeddedCheckoutProvider
 								stripe={stripePromise}
@@ -186,7 +199,7 @@ export const Checkout = () => {
 						</div>
 					</div>
 						<div className="button-div">
-							<Link to={"/cart"}>Back to Cart</Link>
+							<Link className="hover:text-[var(--muted-gold-hv)]" to={"/cart"}>Back to Cart</Link>
 						</div>
 				</div>
                 

@@ -41,7 +41,7 @@ export const ManageProducts = () => {
 								</div>
 								<div className="product-info">
 									<h4>Price:</h4>
-									<p>{product.price}</p>
+									<p>€{product.price}</p>
 									<h4>Stock:</h4>
 									<p>{product.stock}</p>
 									<h4>Description:</h4>
