@@ -199,7 +199,7 @@ export const Checkout = () => {
 						</div>
 					</div>
 						<div className="button-div">
-							<Link to={"/cart"}>Back to Cart</Link>
+							<Link className="hover:text-[var(--muted-gold-hv)]" to={"/cart"}>Back to Cart</Link>
 						</div>
 				</div>
                 
