@@ -31,7 +31,7 @@ export const Products = () => {
 								<h4 className="h-16">{product.name}</h4>
 							</div>
 							<div className="flex justify-end w-full items-center">
-								<p className="text-[var(--moss-green)] font-black flex-grow">{product.price} kr</p>
+								<p className="text-[var(--moss-green)] font-black flex-grow">€{product.price}</p>
 								<Button variant="secondary" className="">See More</Button>
 								{/* <Button className="w-50 flex justify-end"><FaShoppingBag className="text-5xl hover:text-[var(--soft-ivory)] hover:bg-[var(--sage-green)] p-2 rounded-full" /></Button> */}
 							</div>

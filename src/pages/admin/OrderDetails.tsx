@@ -80,7 +80,7 @@ export const OrderDetails = () => {
 					{showOrderByID === order?.id && (
 						<div className="order-info">
 							<h4>Total Price:</h4>
-							<p>{order?.total_price}</p>
+							<p>€{order?.total_price}</p>
 							<h4>Order Status</h4>
 							<p>{order?.order_status}</p>
 							<h4>Payment Status</h4>
@@ -134,7 +134,7 @@ export const OrderDetails = () => {
 									) : (
 										<>
 											<p>
-												{item.quantity} x {item.unit_price}kr
+												{item.quantity} x €{item.unit_price}
 											</p>
 											<div className="button-div">
 												<Button

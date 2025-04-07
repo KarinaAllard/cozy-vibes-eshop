@@ -60,11 +60,11 @@ export const Cart = () => {
                                     </div>
                                     <div className="h-16">
                                         <h4 className="">{item.product.name}</h4>
-                                        <p className="text-[var(--moss-green)] font-black">{item.product.price} kr</p>
+                                        <p className="text-[var(--moss-green)] font-black">€{item.product.price}</p>
                                     </div>
                                     <div className="w-full border-t pt-2 border-[var(--warm-light-gray)]">
                                         <p><b>Amount:</b> {item.quantity}</p>
-                                        <p><b>Total:</b> {item.product.price * item.quantity} kr</p>
+                                        <p><b>Total:</b> €{item.product.price * item.quantity}</p>
                                     </div>
                                 </div>
                                 <div className="flex flex-col gap-5">
@@ -82,7 +82,7 @@ export const Cart = () => {
                     </div>
 
                     <div className="flex flex-col gap-5 mt-10 items-center">
-                        <h3>Total: {totalCartPrice} kr</h3>
+                        <h3>Total: €{totalCartPrice}</h3>
                         <Button variant="delete" className="trash-btn" onClick={handleResetCart}>Clear Cart</Button>
                         <Button variant="submit" className="submit-btn" disabled={cart.length === 0}><Link to={"/checkout"}>Proceed to Checkout</Link></Button>
                     </div>
