@@ -49,8 +49,8 @@ export const ProductDetails = () => {
 					<h4>Item added to cart!</h4>
 				</div>
 			)}
-			<div className="flex justify-center items-center flex-col gap-6">
-				<div className="flex max-w-7xl w-full p-10 justify-end">
+			<div className="flex justify-center items-center flex-col gap-2">
+				<div className="flex max-w-7xl w-full p-10 pb-0 justify-end">
 					<Link to={"/products"} className="flex flex-row">
 						<MdChevronLeft className="text-2xl" />
 						Back
@@ -60,7 +60,7 @@ export const ProductDetails = () => {
 					<div className="md:w-1/2">
 						<img className="border border-[var(--warm-light-gray)]" src={product?.image} alt={product?.name} />
 					</div>
-					<div className="md:w-1/2 md:pt-20">
+					<div className="md:w-1/2 lg:pt-20 md:pt-4">
 						<div className="product-text">
 							<h2 className="border-b-1 m-2 border-[var(--dusty-rose)]">
 								{product?.name}

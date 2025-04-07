@@ -9,19 +9,19 @@ export const Products = () => {
 
 	return (
 		<div className="flex flex-col items-center mb-20">
-			<h1 className="bg-[var(--dusty-rose)] text-[var(--soft-ivory)] w-full mb-10">Our Products</h1>
+			<h1 className="bg-[var(--dusty-rose)] text-[var(--soft-ivory)] w-full mb-10 ">Our Products</h1>
 			{isLoading && <p>Loading products</p>}
 			{error && <p>Error: {error}</p>}
-			<div className="max-w-xs md:max-w-md">
+			<div className="w-full max-w-7xl px-4">
 
 
-			<div className="flex flex-wrap gap-6 items-start justify-center">
+			<div className="flex flex-wrap gap-1 items-start justify-center">
 				{products.length === 0 && !isLoading && <p>No products found.</p>}
 				{products.map((product) => (
 					<Link
 						to={`/product/${product.id}`}
 						key={product.id}
-						className="product-link"
+						className=" w-sm product-link"
 					>
 						<div className="p-8 text-left hover:scale-102 text-[var(--moss-green)]" key={product.id}>
 							<div className="">
