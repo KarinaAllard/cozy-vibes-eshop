@@ -1,13 +1,22 @@
 import { useState } from "react"
-import { FaShoppingCart, FaTimes, FaBars } from "../icons"
+import { FaShoppingCart, FaTimes, FaBars, FaSearch } from "../icons"
 import { Link, NavLink } from "react-router"
+import { Button } from "./Button";
+import { Sidebar } from "./Sidebar";
 
 export const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
+    const [sidebarOpen, setSidebarOpen] = useState(false);
+    const [sidebarContent, setSidebarContent] = useState<"search" | "cart" | null>(null);
 
     const toggleMenu = () => {
         setMenuOpen((isOpen) => !isOpen);
     };
+
+    const openSidebar = (type: "search" | "cart" ) => {
+        setSidebarContent(type);
+        setSidebarOpen(true);
+    }
 
     return (
 
@@ -29,11 +38,23 @@ export const Navbar = () => {
                     <NavLink to={"/products"}  className={({ isActive }) => isActive ? "underline font-bold" : "" } onClick={() => setMenuOpen(false)}>Shop</NavLink>
                 </li>
             </ul>
-            <div className="text-2xl">
+            <div className="text-2xl flex gap-4 items-center">
+                <Button variant="transparent" onClick={() => openSidebar("search")}>
+                    <FaSearch className="text-[var(--moss-green)] hover:text-[var(--muted-gold)] " />
+                </Button>
+                <Button variant="transparent" onClick={() => openSidebar("cart")}>
+                    <FaShoppingCart className="text-[var(--moss-green)] hover:text-[var(--muted-gold)] " />
+                </Button>
+            </div>
+            <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)}>
+                {sidebarContent === "search" && <p>Search bar</p>}
+                {sidebarContent === "cart" && <p>Mini cart</p>}
+            </Sidebar>
+            {/* <div className="text-2xl">
                 <NavLink to={"/cart"}>
                     <FaShoppingCart className="text-[var(--moss-green)] hover:text-[var(--muted-gold)]"/>
                 </NavLink>
-            </div>
+            </div> */}
         </div>
     )
 }
