@@ -7,13 +7,13 @@ import { Sidebar } from "./Sidebar";
 export const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const [sidebarOpen, setSidebarOpen] = useState(false);
-    const [sidebarContent, setSidebarContent] = useState<"search" | "cart" | null>(null);
+    const [sidebarContent, setSidebarContent] = useState<"search" | null>(null);
 
     const toggleMenu = () => {
         setMenuOpen((isOpen) => !isOpen);
     };
 
-    const openSidebar = (type: "search" | "cart" ) => {
+    const openSidebar = (type: "search" ) => {
         setSidebarContent(type);
         setSidebarOpen(true);
     }
@@ -42,19 +42,15 @@ export const Navbar = () => {
                 <Button variant="transparent" onClick={() => openSidebar("search")}>
                     <FaSearch className="text-[var(--moss-green)] hover:text-[var(--muted-gold)] " />
                 </Button>
-                <Button variant="transparent" onClick={() => openSidebar("cart")}>
-                    <FaShoppingCart className="text-[var(--moss-green)] hover:text-[var(--muted-gold)] " />
-                </Button>
+                <NavLink to={"/cart"}>
+                    <Button variant="transparent">
+                        <FaShoppingCart className="text-[var(--moss-green)] hover:text-[var(--muted-gold)] " />
+                    </Button>
+                </NavLink>
             </div>
             <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)}>
                 {sidebarContent === "search" && <p>Search bar</p>}
-                {sidebarContent === "cart" && <p>Mini cart</p>}
             </Sidebar>
-            {/* <div className="text-2xl">
-                <NavLink to={"/cart"}>
-                    <FaShoppingCart className="text-[var(--moss-green)] hover:text-[var(--muted-gold)]"/>
-                </NavLink>
-            </div> */}
         </div>
     )
 }
