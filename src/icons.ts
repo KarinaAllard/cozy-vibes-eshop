@@ -14,6 +14,7 @@ import {
 	FaCog,
     FaSignOutAlt,
     FaShoppingBag,
+	FaSearch,
 } from "react-icons/fa";
 
 export {
@@ -30,4 +31,5 @@ export {
 	FaCog,
     FaSignOutAlt,
     FaShoppingBag,
+	FaSearch,
 };

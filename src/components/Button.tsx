@@ -6,7 +6,7 @@ interface IButtonProps {
     className?: string;
     onClick?: () => void;
     disabled?: boolean;
-    variant: "submit" | "delete" | "primary" | "secondary";
+    variant: "submit" | "delete" | "primary" | "secondary" | "transparent";
 }
 
 export const Button = (props: IButtonProps) => {
@@ -17,6 +17,7 @@ export const Button = (props: IButtonProps) => {
         delete: "bg-[var(--burnt-red)] text-white hover:text-[var(--soft-ivory)] hover:bg-[var(--burnt-red-hv)]",
         primary: "bg-[var(--muted-gold)] text-[var(--soft-ivory)] hover:bg-[var(--muted-gold-hv)]",
         secondary: "bg-transparent text-[var(--soft-charcoal)] border border-[var(--warm-light-gray)] hover:bg-[var(--warm-light-gray)] hover:text-[var(--soft-charcoal-hv)]",
+        transparent: "bg-transparent text-[var(--soft-charcoal)] hover:font-black hover:text-[var(--soft-charcoal-hv)]",
         disabled: "bg-gray-400 text-[var(--soft-ivory)] cursor-not-allowed",
     };
 
