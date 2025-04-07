@@ -94,7 +94,7 @@ export const Checkout = () => {
 				{error && <p className="error-banner">{error}</p>}
 				{!existingCustomer && (
 
-				<form onSubmit={handleSubmit}>
+				<form className=" w-60 md:w-72" onSubmit={handleSubmit}>
                 <div className="flex flex-col py-4 gap-1">
                     <label className="text-[var(--moss-green)]" htmlFor="firstname">First Name:</label>
 					<input
@@ -133,6 +133,7 @@ export const Checkout = () => {
 						value={formData.phone}
 						onChange={handleChange}
 						placeholder="Phone Number"
+						required
 						className="border border-[var(--dusty-rose)] p-1"
 					/>
                     <label htmlFor="street_address">Street Address:</label>
@@ -142,6 +143,7 @@ export const Checkout = () => {
 						value={formData.street_address}
 						onChange={handleChange}
 						placeholder="Street Address"
+						required
 						className="border border-[var(--dusty-rose)] p-1"
 					/>
                     <label htmlFor="postal_code">Postal Code:</label>
@@ -151,6 +153,7 @@ export const Checkout = () => {
 						value={formData.postal_code}
 						onChange={handleChange}
 						placeholder="Postal Code"
+						required
 						className="border border-[var(--dusty-rose)] p-1"
 					/>
                     <label htmlFor="city">City:</label>
@@ -160,6 +163,7 @@ export const Checkout = () => {
 						value={formData.city}
 						onChange={handleChange}
 						placeholder="City"
+						required
 						className="border border-[var(--dusty-rose)] p-1"
 					/>
                     <label htmlFor="country">Country:</label>
@@ -169,21 +173,22 @@ export const Checkout = () => {
 						value={formData.country}
 						onChange={handleChange}
 						placeholder="Country"
+						required
 						className="border border-[var(--dusty-rose)] p-1"
 					/>
 				</div>
-				<div className="button-div">
+				<div className="flex flex-col mt-4 gap-2">
 					<Button variant="submit" type="submit" className="submit-btn">
 						Proceed to Payment
 					</Button>
-					<Link to={"/cart"}>Back to Cart</Link>
+					<Link className="hover:text-[var(--muted-gold-hv)]" to={"/cart"}>Back to Cart</Link>
 				</div>
                 </form>
 				)}
 
 			{existingCustomer && clientSecret && (
-				<div className="embedded-checkout">
-					<div className="payment-container">
+				<div className="w-5xl">
+					<div className="border border-[var(--dusty-rose)] my-6 bg-white py-4">
 						<div className="embedded-div">
 							<EmbeddedCheckoutProvider
 								stripe={stripePromise}
