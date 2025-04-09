@@ -18,3 +18,7 @@ export interface ISearchItemImg {
     src: string,
     width: string,
 }
+
+export interface ISearchResponse {
+    items: ISearchItem[];
+}

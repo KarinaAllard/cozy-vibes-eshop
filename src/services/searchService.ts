@@ -1,8 +1,8 @@
 import axios from "axios";
-import { ISearchItem } from "../types/ISearch";
+import { ISearchResponse } from "../types/ISearch";
 import { API_URL, handleRequest } from "./baseService";
 
-export const searchService = async (searchInput: string): Promise<ISearchItem[]> => {
+export const searchService = async (searchInput: string): Promise<ISearchResponse> => {
     return await handleRequest(
         axios.get(`${API_URL}/search/search`, {
             params: { q: searchInput },

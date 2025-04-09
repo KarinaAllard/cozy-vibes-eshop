@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { searchService } from "../services/searchService";
-import { ISearchItem } from "../types/ISearch"
+import { ISearchResponse, ISearchItem } from "../types/ISearch"
 
 export const useSearch = (searchInput: string) => {
     const [searchResults, setSearchResults] = useState<ISearchItem[]>([]);
@@ -23,8 +23,13 @@ export const useSearch = (searchInput: string) => {
         setIsLoading(true);
         setError(null)
         try {
-            const results = await searchService(searchInput);
-            setSearchResults(results);
+            const results: ISearchResponse = await searchService(searchInput);
+            console.log("Search results from backend:", results);
+            if (results.items) {
+                setSearchResults(results.items)
+            } else {
+                setSearchResults([])
+            }
         } catch (error) {
             console.error("Search error:", error);
             setError("Failed to fetch search results");
