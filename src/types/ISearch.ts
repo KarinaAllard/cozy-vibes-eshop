@@ -13,7 +13,7 @@ export interface ISearchItem {
     title: string,
 }
 
-interface ISearchItemImg {
+export interface ISearchItemImg {
     height: string,
     src: string,
     width: string,
