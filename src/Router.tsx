@@ -18,6 +18,7 @@ import { OrderDetails } from "./pages/admin/OrderDetails";
 import { CartProvider } from "./context/CartContext";
 import { Checkout } from "./pages/shop/Checkout";
 import { OrderConfirmation } from "./pages/shop/OrderConfirmation";
+import { Search } from "./pages/Search";
 
 export const router = createBrowserRouter([
 	{
@@ -111,6 +112,14 @@ export const router = createBrowserRouter([
 				</CartProvider>
 				),
 			},
+			{
+				path: "/search",
+				element: (
+					<CartProvider>
+						<Search/>
+					</CartProvider>
+				)
+			}
 		],
 	},
 ]);
