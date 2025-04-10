@@ -11,6 +11,21 @@ export const SearchBar = () => {
         return title.length > length ? title.substring(0, length) + '...' : title;
     }
 
+    const SRC_BASE_URL = 'https://www.lagerhaus.com/home-decoration/';
+    const BASE_URL = 'https://cozy-vibes-eshop.vercel.app/';
+
+    const productLinks = [
+        { srcLink: `${SRC_BASE_URL}candles-candleholders/scented-candles/doftljus-citronella`, myLink: `${BASE_URL}product/2` },
+        { srcLink: `${SRC_BASE_URL}candles-candleholders/scented-candles/doftljus-pineapple-1`, myLink: `${BASE_URL}product/3` },
+        { srcLink: `${SRC_BASE_URL}candles-candleholders/scented-candles/doftljus-strawberries-1`, myLink: `${BASE_URL}product/4` },
+        { srcLink: `${SRC_BASE_URL}candles-candleholders/tealightholders-lanterns/ljuslykta-rada-rosa`, myLink: `${BASE_URL}product/5` },
+        { srcLink: `${SRC_BASE_URL}candles-candleholders/tealightholders-lanterns/ljuslykta-rada-matcha`, myLink: `${BASE_URL}product/6` },
+        { srcLink: `${SRC_BASE_URL}candles-candleholders/tealightholders-lanterns/ljuslykta-rada-kram`, myLink: `${BASE_URL}product/7` },
+        { srcLink: `${SRC_BASE_URL}candles-candleholders/tealightholders-lanterns/ljuslykta-rada-paron`, myLink: `${BASE_URL}product/8` },
+        { srcLink: `${SRC_BASE_URL}candles-candleholders/tealightholders-lanterns/ljuslykta-rada-bla`, myLink: `${BASE_URL}product/9` },
+        { srcLink: `${SRC_BASE_URL}candles-candleholders/tealightholders-lanterns/ljuslykta-rada-corall`, myLink: `${BASE_URL}product/10` },
+    ];
+
     useEffect(() => {
         if (searchText.length < 3) {
             return;
@@ -38,15 +53,44 @@ export const SearchBar = () => {
                         {isLoading ? (
                             <p className="p-2 text-[var(--muted-gold)]">Searching...</p>
                         ) : searchResults.length > 0 ? (
-                            searchResults.slice(0, 5).map((item) => (
-                            <div key={item.link} className="p-2 border-b border-[var(--warm-light-gray)]">
+                            searchResults.slice(0, 5).map((item) => {
+                                const matchedProduct = productLinks.find((p) => p.srcLink === item.link);
+                                const internalLink = matchedProduct?.myLink || item.link;
+                                const isInternal = Boolean(matchedProduct);
+
+                            return (
+                            <div 
+                                key={item.link} 
+                                className={`p-2 border-b border-[var(--warm-light-gray)] ${
+                                    !isInternal ? "opacity-50 pointer-events-none cursor-not-allowed" : ""
+                                }`}
+                            >
                                 {item.pagemap.cse_thumbnail && (
-                                    <img src= {item.pagemap.cse_thumbnail[0].src} alt={item.title}
-                                    className="w-[200px]" />
+                                    <img 
+                                        src= {item.pagemap.cse_thumbnail[0].src} 
+                                        alt={item.title}
+                                        className="w-[200px]" 
+                                    />
                                 )}
-                                <Link to={item.link} target="_blank" rel="noopener noreferrer" className="underline text-[var(--muted-gold)] hover:text-[var(--muted-gold-hv)]"><p className="underline text-[var(--muted-gold)] hover:text-[var(--muted-gold-hv)]">{truncateTitle(item.title, 40)}</p></Link>
+                                <Link 
+                                    to={isInternal ? internalLink : "#"} 
+                                    target={isInternal ? "_self" : "_blank"} 
+                                    rel={isInternal ? undefined : "noopener noreferrer"} 
+                                    className={`underline ${
+                                        isInternal ? "text-[var(--muted-gold)] hover:text-[var(--muted-gold-hv)]"
+                                         : "text-[var(--soft-charcoal)]"
+                                         }`}
+                                >
+                                    <p className={`underline ${
+                                        isInternal ? "text-[var(--muted-gold)] hover:text-[var(--muted-gold-hv)]"
+                                         : "text-[var(--soft-charcoal)]"
+                                         }`}
+                                    >
+                                        {truncateTitle(item.title, 40)}
+                                    </p>
+                                </Link>
                             </div>
-                            ))
+                            )})
                         ) : (
                             <p className="p-2 text-[var(--warm-light-gray)]">No results found</p>
                          )}
