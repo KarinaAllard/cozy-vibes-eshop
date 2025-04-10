@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
 import { useSearch } from "../hooks/useSearch";
+import { Button } from "./Button";
+import { FaTimes } from "../icons";
 
 
 export const SearchBar = () => {
@@ -26,6 +28,10 @@ export const SearchBar = () => {
         { srcLink: `${SRC_BASE_URL}candles-candleholders/tealightholders-lanterns/ljuslykta-rada-corall`, myLink: `${BASE_URL}product/10` },
     ];
 
+    const clearSearch = () => {
+        setSearchText("");
+    }
+
     useEffect(() => {
         if (searchText.length < 3) {
             return;
@@ -42,6 +48,9 @@ export const SearchBar = () => {
                 onChange={(e) => setSearchText(e.target.value)}
                 className="border border-[var(--warm-light-gray)] bg-[var(--product-card-bg)] px-2 py-0.5 rounded-sm focus:outline-0"
             />
+            {searchText && (
+                <Button variant="transparent" onClick={clearSearch} className="absolute -right-2 top-1/2 -translate-y-1/2"><FaTimes className="text-2xl"/></Button>
+            )}
             {searchText.length >= 3 && (
                 <div className="absolute max-h-[500px] overflow-y-scroll md:max-h-[650px] top-full left-0 w-full bg-[var(--soft-ivory)] border border-[var(--warm-light-gray)]">
                 {error ? (
@@ -53,7 +62,7 @@ export const SearchBar = () => {
                         {isLoading ? (
                             <p className="p-2 text-[var(--muted-gold)]">Searching...</p>
                         ) : searchResults.length > 0 ? (
-                            searchResults.slice(0, 5).map((item) => {
+                            searchResults.slice(0, 10).map((item) => {
                                 const matchedProduct = productLinks.find((p) => p.srcLink === item.link);
                                 const internalLink = matchedProduct?.myLink || item.link;
                                 const isInternal = Boolean(matchedProduct);
@@ -65,13 +74,6 @@ export const SearchBar = () => {
                                     !isInternal ? "opacity-20 pointer-events-none cursor-not-allowed" : ""
                                 }`}
                             >
-                                {item.pagemap.cse_thumbnail && (
-                                    <img 
-                                        src= {item.pagemap.cse_thumbnail[0].src} 
-                                        alt={item.title}
-                                        className="w-[200px]" 
-                                    />
-                                )}
                                 <Link 
                                     to={isInternal ? internalLink : "#"} 
                                     target={isInternal ? "_self" : "_blank"} 
@@ -81,12 +83,19 @@ export const SearchBar = () => {
                                          : "text-[var(--soft-charcoal)]"
                                          }`}
                                 >
+                                {item.pagemap.cse_thumbnail && (
+                                    <img 
+                                        src= {item.pagemap.cse_thumbnail[0].src} 
+                                        alt={item.title}
+                                        className="w-[200px]" 
+                                    />
+                                )}
                                     <p className={`underline ${
                                         isInternal ? "text-[var(--muted-gold)] hover:text-[var(--muted-gold-hv)]"
                                          : "text-[var(--soft-charcoal)]"
                                          }`}
                                     >
-                                        {truncateTitle(item.title, 40)}
+                                        {truncateTitle(item.title, 35)}
                                     </p>
                                 </Link>
                             </div>
