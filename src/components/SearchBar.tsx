@@ -62,7 +62,7 @@ export const SearchBar = () => {
                             <div 
                                 key={item.link} 
                                 className={`p-2 border-b border-[var(--warm-light-gray)] ${
-                                    !isInternal ? "opacity-50 pointer-events-none cursor-not-allowed" : ""
+                                    !isInternal ? "opacity-20 pointer-events-none cursor-not-allowed" : ""
                                 }`}
                             >
                                 {item.pagemap.cse_thumbnail && (
