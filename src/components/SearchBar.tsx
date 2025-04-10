@@ -44,7 +44,7 @@ export const SearchBar = () => {
         { srcLink: `${SRC_BASE_URL}home-textiles/cushions-cushion-covers/cushion-gamer`, myLink: `${BASE_URL}product/26` },
         { srcLink: `${SRC_BASE_URL}home-textiles/cushions-cushion-covers/kudde-bananen`, myLink: `${BASE_URL}product/27` },
         { srcLink: `${SRC_BASE_URL}home-textiles/cushions-cushion-covers/kudde-kitty`, myLink: `${BASE_URL}product/28` },
-        { srcLink: `${SRC_BASE_URL}/home-textiles/cushions-cushion-covers/kuddfodral-katten`, myLink: `${BASE_URL}product/29` },
+        { srcLink: `${SRC_BASE_URL}home-textiles/cushions-cushion-covers/kuddfodral-katten`, myLink: `${BASE_URL}product/29` },
         { srcLink: `${SRC_BASE_URL}home-textiles/blankets/filt-duo-waffle-gul`, myLink: `${BASE_URL}product/30` },
         { srcLink: `${SRC_BASE_URL}home-textiles/cushions-cushion-covers/kuddfodral-storm-ljusgron`, myLink: `${BASE_URL}product/31` },
         { srcLink: `${SRC_BASE_URL}decoration/other-decorations/dekoration-discokula-ljusrosa`, myLink: `${BASE_URL}product/32` },
