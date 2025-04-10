@@ -3,7 +3,7 @@ import { Link } from "react-router";
 import { useSearch } from "../hooks/useSearch";
 
 
-export const Searchbar = () => {
+export const SearchBar = () => {
     const [searchText, setSearchText] = useState<string>("");
     const { searchResults, error, isLoading } = useSearch(searchText);
 

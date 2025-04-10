@@ -2,7 +2,7 @@ import { useState } from "react"
 import { FaShoppingCart, FaTimes, FaBars, FaSearch } from "../icons"
 import { Link, NavLink } from "react-router"
 import { Button } from "./Button";
-import { Searchbar } from "./SearchBar";
+import { SearchBar } from "./SearchBar";
 // import { Sidebar } from "./Sidebar";
 
 export const Navbar = () => {
@@ -44,7 +44,7 @@ export const Navbar = () => {
                 </li>
             </ul>
             <div className="flex items-center gap-3 ml-auto">
-                <Searchbar />
+                <SearchBar />
                 <Link to={"/search"}>
                 <FaSearch className="text-[var(--moss-green)] hover:text-[var(--muted-gold)] text-2xl" />
                 </Link>
