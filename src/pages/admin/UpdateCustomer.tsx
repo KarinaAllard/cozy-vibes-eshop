@@ -59,10 +59,10 @@ export const UpdateCustomer = () => {
 	}
 
 	return (
-		<div className="customer-wrapper">
+		<div className="flex flex-col">
 			<form onSubmit={handleSubmit}>
 				<h2>Update Customer</h2>
-				<div className="form-div">
+				<div className="form-div flex flex-col items-center gap-1 mb-5">
 					<input
 						type="text"
 						name="firstname"
@@ -70,6 +70,7 @@ export const UpdateCustomer = () => {
 						onChange={handleChange}
 						placeholder="First Name"
 						required
+						className="border border-[var(--warm-light-gray)] rounded px-3 text-xl text-[var(--soft-charcoal)] focus:outline-0"
 					/>
 					<input
 						type="text"
@@ -78,6 +79,7 @@ export const UpdateCustomer = () => {
 						onChange={handleChange}
 						placeholder="Last Name"
 						required
+						className="border border-[var(--warm-light-gray)] rounded px-3 text-xl text-[var(--soft-charcoal)] focus:outline-0"
 					/>
 					<input
 						type="email"
@@ -86,6 +88,7 @@ export const UpdateCustomer = () => {
 						onChange={handleChange}
 						placeholder="Email"
 						required
+						className="border border-[var(--warm-light-gray)] rounded px-3 text-xl text-[var(--soft-charcoal)] focus:outline-0"
 					/>
 					<input
 						type="password"
@@ -93,8 +96,8 @@ export const UpdateCustomer = () => {
 						value={formData.password}
 						onChange={handleChange}
 						placeholder="Password"
-						className="input-pw"
 						required
+						className="border border-[var(--warm-light-gray)] rounded px-3 text-xl text-[var(--soft-charcoal)] focus:outline-0"
 					/>
 					<input
 						type="text"
@@ -102,6 +105,8 @@ export const UpdateCustomer = () => {
 						value={formData.phone}
 						onChange={handleChange}
 						placeholder="Phone Number"
+						required
+						className="border border-[var(--warm-light-gray)] rounded px-3 text-xl text-[var(--soft-charcoal)] focus:outline-0"
 					/>
 					<input
 						type="text"
@@ -109,6 +114,8 @@ export const UpdateCustomer = () => {
 						value={formData.street_address}
 						onChange={handleChange}
 						placeholder="Street Address"
+						required
+						className="border border-[var(--warm-light-gray)] rounded px-3 text-xl text-[var(--soft-charcoal)] focus:outline-0"
 					/>
 					<input
 						type="text"
@@ -116,6 +123,8 @@ export const UpdateCustomer = () => {
 						value={formData.postal_code}
 						onChange={handleChange}
 						placeholder="Postal Code"
+						required
+						className="border border-[var(--warm-light-gray)] rounded px-3 text-xl text-[var(--soft-charcoal)] focus:outline-0"
 					/>
 					<input
 						type="text"
@@ -123,6 +132,8 @@ export const UpdateCustomer = () => {
 						value={formData.city}
 						onChange={handleChange}
 						placeholder="City"
+						required
+						className="border border-[var(--warm-light-gray)] rounded px-3 text-xl text-[var(--soft-charcoal)] focus:outline-0"
 					/>
 					<input
 						type="text"
@@ -130,10 +141,12 @@ export const UpdateCustomer = () => {
 						value={formData.country}
 						onChange={handleChange}
 						placeholder="Country"
+						required
+						className="border border-[var(--warm-light-gray)] rounded px-3 text-xl text-[var(--soft-charcoal)] focus:outline-0"
 					/>
 				</div>
 
-				<div className="button-div">
+				<div className="button-div flex flex-col items-center gap-2">
 					<Button variant="submit" type="submit" className="submit-btn">
 						Update Customer
 					</Button>

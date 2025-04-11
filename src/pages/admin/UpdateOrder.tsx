@@ -41,7 +41,7 @@ export const UpdateOrder = () => {
 			<h1>Edit Order #{id}</h1>
 
 			<div className="order-wrapper">
-				<div className="order-div">
+				<div className="order-div flex flex-col items-center gap-1 mb-5">
 					<h3>Order Status</h3>
 					<select
 						value={orderStatus}
@@ -64,7 +64,7 @@ export const UpdateOrder = () => {
 					</select>
 				</div>
 
-				<div className="button-div">
+				<div className="button-div flex flex-col items-center gap-2">
 					<Button variant="submit" className="edit-btn" onClick={handleSaveChanges}>
 						Save Changes
 					</Button>

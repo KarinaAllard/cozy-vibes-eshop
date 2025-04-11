@@ -1,18 +1,16 @@
 import { useEffect, useState } from "react";
 import { IProduct } from "../../types/IProduct";
 import { useProducts } from "../../hooks/useProducts";
-import { useNavigate, useParams } from "react-router";
+import { Link, useNavigate, useParams } from "react-router";
 import { Button } from "../../components/Button";
 
 enum ProductCategory {
-	Hat = "Hat",
-	Glasses = "Glasses",
-	Jacket = "Jacket",
-	Neckwear = "Neckwear",
-	Shirt = "Shirt",
-	Gloves = "Gloves",
-	Pants = "Pants",
-	Shoes = "Shoes",
+	Candle = "Candle",
+	Vase = "Vase",
+	Pot = "Pot",
+	HomeTextile = "Home Textile",
+	CandleHolder = "Candle Holder",
+	Decoration = "Decoration",
 }
 
 export const UpdateProduct = () => {
@@ -63,10 +61,11 @@ export const UpdateProduct = () => {
 	}
 
 	return (
-		<div className="product-wrapper">
+		<div className="flex flex-col">
 			<form onSubmit={handleSubmit}>
 				<h2>Create New Product</h2>
-				<div className="form-div">
+				<div className="form-div flex flex-col items-center gap-1 mb-5">
+				<label htmlFor="name">Name:</label>
 					<input
 						type="text"
 						name="name"
@@ -74,7 +73,9 @@ export const UpdateProduct = () => {
 						onChange={handleChange}
 						placeholder="Name"
 						required
+						className="border border-[var(--warm-light-gray)] rounded px-3 text-xl text-[var(--soft-charcoal)] focus:outline-0"
 					/>
+					<label htmlFor="description">Description:</label>
 					<input
 						type="text"
 						name="description"
@@ -82,7 +83,9 @@ export const UpdateProduct = () => {
 						onChange={handleChange}
 						placeholder="Description"
 						required
+						className="border border-[var(--warm-light-gray)] rounded px-3 text-xl text-[var(--soft-charcoal)] focus:outline-0"
 					/>
+					<label htmlFor="price">Price:</label>
 					<input
 						type="number"
 						name="price"
@@ -90,7 +93,9 @@ export const UpdateProduct = () => {
 						onChange={handleChange}
 						placeholder="Price"
 						required
+						className="border border-[var(--warm-light-gray)] rounded px-3 text-xl text-[var(--soft-charcoal)] focus:outline-0"
 					/>
+					<label htmlFor="stock">Stock:</label>
 					<input
 						type="number"
 						name="stock"
@@ -98,14 +103,16 @@ export const UpdateProduct = () => {
 						onChange={handleChange}
 						placeholder="Stock"
 						required
+						className="border border-[var(--warm-light-gray)] rounded px-3 text-xl text-[var(--soft-charcoal)] focus:outline-0"
 					/>
-					<label htmlFor="category">Category</label>
+					<label htmlFor="category">Category:</label>
 					<select
 						name="category"
 						id="category"
 						value={formData.category}
 						onChange={handleChange}
 						required
+						className="border border-[var(--warm-light-gray)] rounded px-3 text-xl text-[var(--soft-charcoal)] focus:outline-0"
 					>
 						<option value="" disabled>
 							Select a category
@@ -116,6 +123,7 @@ export const UpdateProduct = () => {
 							</option>
 						))}
 					</select>
+					<label htmlFor="image">Image URL:</label>
 					<input
 						type="text"
 						name="image"
@@ -123,12 +131,14 @@ export const UpdateProduct = () => {
 						onChange={handleChange}
 						placeholder="Insert Image URL"
 						required
+						className="border border-[var(--warm-light-gray)] rounded px-3 text-xl text-[var(--soft-charcoal)] focus:outline-0"
 					/>
 
-					<div className="button-div">
+					<div className="button-div flex flex-col items-center gap-2">
 						<Button variant="submit" type="submit" className="submit-btn">
 							Update Product
 						</Button>
+						<Link to={"/admin/manage-products"}>Back</Link>
 					</div>
 				</div>
 			</form>

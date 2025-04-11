@@ -71,9 +71,9 @@ export const OrderDetails = () => {
 				{isLoading && <p>Loading orders...</p>}
 				{error && <p>Error: {error}</p>}
 
-				<div className="order-div">
+				<div className="order-div flex flex-col items-center gap-1 mb-5">
 					<h2>Order #{order?.id}</h2>
-					<h3 onClick={() => showOrderDetails(order?.id!)}>
+					<h3 onClick={() => showOrderDetails(order?.id!)} className="flex items-center">
 						Order Information
 						{showOrderByID === order?.id ? <MdExpandLess /> : <MdExpandMore />}
 					</h3>
@@ -87,7 +87,7 @@ export const OrderDetails = () => {
 							<p>{order?.payment_status}</p>
 						</div>
 					)}
-					<h3 onClick={() => showOrderItemsDetails(order?.id!)}>
+					<h3 onClick={() => showOrderItemsDetails(order?.id!)} className="flex items-center">
 						Order Items
 						{showOrderItemsByID === order?.id ? (
 							<MdExpandLess />
@@ -152,7 +152,7 @@ export const OrderDetails = () => {
 						</div>
 					)}
 
-					<h3 onClick={() => showCustomerDetails(order?.id!)}>
+					<h3 onClick={() => showCustomerDetails(order?.id!)} className="flex items-center">
 						Customer Info
 						{showCustomerByID === order?.id ? (
 							<MdExpandLess />
@@ -185,7 +185,7 @@ export const OrderDetails = () => {
 						</div>
 					)}
 				</div>
-				<div className="button-div">
+				<div className="button-div button-div flex flex-col items-center gap-2">
 					<Button variant="primary" className="edit-btn">
 						<Link to={`/admin/update-order/${order?.id}`}>Edit Order</Link>
 					</Button>
