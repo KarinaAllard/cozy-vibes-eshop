@@ -12,9 +12,15 @@ This is a **fictional project** and is not intended for actual commercial use. A
 - **Responsive design**: Fully responsive, ensuring the site looks great on all devices, from mobile to desktop.
 - **Product catalog**: Browse categories like candles, vases, blankets, and other cozy home décor items.
 - **Shopping cart**: Add, update, and remove products easily.
-- **Checkout process**: Streamlined checkout flow with form validation and Stripe payment integration.
 - **Admin dashboard**: Manage orders, products, and customers via an admin panel.
+
+
+## Features that still need to be implemented
+- **Checkout process**: Streamlined checkout flow with form validation and Stripe payment integration.
 - **Secure payment system**: Integrated with Stripe for safe and easy transactions.
+- **Authentication**: User authentication and Admin authentication.
+
+  The Stripe implementation with webhook broke when deploying the build, I'll come back to fix it at a later point. 
 
 ### Acknowledging the Original Theme:
 - This project was initially themed after **Disco Elysium**-inspired products (clothing and accessories). However, the theme has since been updated to focus on **cozy home décor**, with inspiration drawn from real-life brands like **Lagerhaus** (used for educational purposes). This change reflects the more professional direction for the project, which is intended to showcase my skills in e-commerce development.
