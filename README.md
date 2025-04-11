@@ -13,6 +13,7 @@ This is a **fictional project** and is not intended for actual commercial use. A
 - **Product catalog**: Browse categories like candles, vases, blankets, and other cozy home décor items.
 - **Shopping cart**: Add, update, and remove products easily.
 - **Admin dashboard**: Manage orders, products, and customers via an admin panel.
+- **Search bar**: Search for products with help from the Google API. If the item is in the shop, it shows up normally. If not, it appears grayed out so you can still spot it.
 
 
 ## Features that still need to be implemented
