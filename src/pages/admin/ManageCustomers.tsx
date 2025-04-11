@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useCustomers } from "../../hooks/useCustomers";
 import { Link } from "react-router";
 import { Button } from "../../components/Button";
-import { MdEdit, MdExpandLess, MdExpandMore } from "../../icons";
+import { MdExpandLess, MdExpandMore } from "../../icons";
 
 export const ManageCustomers = () => {
 	const { customers, isLoading, error, deleteCustomerHandler } = useCustomers();
@@ -20,16 +20,16 @@ export const ManageCustomers = () => {
 			{isLoading && <p>Loading customers...</p>}
 			{error && <p>Error: {error}</p>}
 
-			<div className="customer-wrapper">
-				<div className="button-div">
+			<div className="customer-wrapper flex flex-col items-center gap-2 mb-6">
+				<div className="button-div m-4">
 					<Button variant="submit" type="button" className="edit-btn">
 						<Link to={"/admin/create-customer"}>Create Customer</Link>
 					</Button>
 				</div>
 				{customers.length === 0 && !isLoading && <p>No customers found.</p>}
 				{customers.map((customer) => (
-					<div className="customer-div" key={customer.id}>
-						<h3 onClick={() => showCustomerDetails(customer.id!)}>
+					<div className="customer-div flex flex-col items-center p-4" key={customer.id}>
+						<h3 onClick={() => showCustomerDetails(customer.id!)} className="flex items-center">
 							{customer.firstname} {customer.lastname}
 							{showCustomerByID === customer.id ? (
 								<MdExpandLess />
@@ -52,10 +52,10 @@ export const ManageCustomers = () => {
 										{customer.city}, {customer.country}
 									</p>
 								</div>
-								<div className="button-div">
+								<div className="button-div flex gap-3 mt-3">
 									<Button variant="primary" className="edit-btn">
 										<Link to={`/admin/update-customer/${customer.id}`}>
-											Update <MdEdit />
+											Update
 										</Link>
 									</Button>
 									<Button

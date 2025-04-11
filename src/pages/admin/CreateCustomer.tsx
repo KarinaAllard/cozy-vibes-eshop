@@ -39,10 +39,10 @@ export const CreateCustomer = () => {
 	};
 
 	return (
-		<div className="customer-wrapper">
+		<div className="flex flex-col">
 			<form onSubmit={handleSubmit}>
 				<h2>Create New Customer</h2>
-				<div className="form-div">
+				<div className="form-div flex flex-col items-center gap-1 mb-5">
 					<label htmlFor="firstname">First Name:</label>
 					<input
 						type="text"
@@ -51,6 +51,7 @@ export const CreateCustomer = () => {
 						onChange={handleChange}
 						placeholder="First Name"
 						required
+						className="border border-[var(--warm-light-gray)] rounded px-3 text-xl text-[var(--soft-charcoal)] focus:outline-0"
 					/>
 					<label htmlFor="lastname">Last Name:</label>
 					<input
@@ -60,6 +61,7 @@ export const CreateCustomer = () => {
 						onChange={handleChange}
 						placeholder="Last Name"
 						required
+						className="border border-[var(--warm-light-gray)] rounded px-3 text-xl text-[var(--soft-charcoal)] focus:outline-0"
 					/>
 					<label htmlFor="email">Email:</label>
 					<input
@@ -69,6 +71,7 @@ export const CreateCustomer = () => {
 						onChange={handleChange}
 						placeholder="Email"
 						required
+						className="border border-[var(--warm-light-gray)] rounded px-3 text-xl text-[var(--soft-charcoal)] focus:outline-0"
 					/>
 					<label htmlFor="password">Password:</label>
 					<input
@@ -77,8 +80,8 @@ export const CreateCustomer = () => {
 						value={formData.password}
 						onChange={handleChange}
 						placeholder="Password"
-						className="input-pw"
 						required
+						className="border border-[var(--warm-light-gray)] rounded px-3 text-xl text-[var(--soft-charcoal)] focus:outline-0"
 					/>
 					<label htmlFor="phone">Phone:</label>
 					<input
@@ -87,6 +90,8 @@ export const CreateCustomer = () => {
 						value={formData.phone}
 						onChange={handleChange}
 						placeholder="Phone Number"
+						required
+						className="border border-[var(--warm-light-gray)] rounded px-3 text-xl text-[var(--soft-charcoal)] focus:outline-0"
 					/>
 					<label htmlFor="street_address">Street Address:</label>
 					<input
@@ -95,6 +100,8 @@ export const CreateCustomer = () => {
 						value={formData.street_address}
 						onChange={handleChange}
 						placeholder="Street Address"
+						required
+						className="border border-[var(--warm-light-gray)] rounded px-3 text-xl text-[var(--soft-charcoal)] focus:outline-0"
 					/>
 					<label htmlFor="postal_code">Postal Code:</label>
 					<input
@@ -103,6 +110,8 @@ export const CreateCustomer = () => {
 						value={formData.postal_code}
 						onChange={handleChange}
 						placeholder="Postal Code"
+						required
+						className="border border-[var(--warm-light-gray)] rounded px-3 text-xl text-[var(--soft-charcoal)] focus:outline-0"
 					/>
 					<label htmlFor="city">City:</label>
 					<input
@@ -111,6 +120,8 @@ export const CreateCustomer = () => {
 						value={formData.city}
 						onChange={handleChange}
 						placeholder="City"
+						required
+						className="border border-[var(--warm-light-gray)] rounded px-3 text-xl text-[var(--soft-charcoal)] focus:outline-0"
 					/>
 					<label htmlFor="country">Country:</label>
 					<input
@@ -119,9 +130,11 @@ export const CreateCustomer = () => {
 						value={formData.country}
 						onChange={handleChange}
 						placeholder="Country"
+						required
+						className="border border-[var(--warm-light-gray)] rounded px-3 text-xl text-[var(--soft-charcoal)] focus:outline-0"
 					/>
 				</div>
-				<div className="button-div">
+				<div className="button-div flex flex-col items-center gap-2">
 					<Button variant="submit" type="submit" className="submit-btn">
 						Create Customer
 					</Button>
