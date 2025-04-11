@@ -21,7 +21,10 @@ This is a **fictional project** and is not intended for actual commercial use. A
 - **Secure payment system**: Integrated with Stripe for safe and easy transactions.
 - **Authentication**: User authentication and Admin authentication.
 
-  The Stripe implementation with webhook broke when deploying the build, I'll come back to fix it at a later point. 
+  The Stripe implementation with webhook broke when deploying the build, I'll come back to fix it at a later point.
+
+  ![profile](https://github.com/user-attachments/assets/0e8c7dc9-a30e-4be1-891c-fb0d478d1c3c)
+
 
 ### Acknowledging the Original Theme:
 - This project was initially themed after **Disco Elysium**-inspired products (clothing and accessories). However, the theme has since been updated to focus on **cozy home décor**, with inspiration drawn from real-life brands like **Lagerhaus** (used for educational purposes). This change reflects the more professional direction for the project, which is intended to showcase my skills in e-commerce development.
